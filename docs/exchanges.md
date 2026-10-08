@@ -56,6 +56,16 @@ In case of problems related to rate-limits (usually DDOS Exceptions in your logs
 This configuration enables kraken, as well as rate-limiting to avoid bans from the exchange.
 `"rateLimit": 3100` defines a wait-event of 3.1s between each call. This can also be completely disabled by setting `"enableRateLimit"` to false.
 
+## Alpaca
+
+Alpaca supports its crypto markets only - spot pairs quoted in `USD` (e.g. `BTC/USD`), with a minimum order notional of 10 USD.
+API keys can be created in the [Alpaca dashboard](https://app.alpaca.markets/); paper trading keys work well with dry-run.
+
+Alpaca supports [time_in_force](configuration.md#understand-order_time_in_force) with settings "GTC" (good till cancelled) and "IOC" (immediate-or-cancel) only.
+
+!!! Warning "Stoploss on Exchange"
+    Alpaca crypto orders do not support freqtrade's stoploss order types (stop orders are limited to `stop_limit`) - keep `stoploss_on_exchange` disabled (the default).
+
 ## Binance
 
 !!! Warning "Server location and geo-ip restrictions"

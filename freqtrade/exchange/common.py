@@ -50,6 +50,7 @@ MAP_EXCHANGE_CHILDCLASS = {
 }
 
 SUPPORTED_EXCHANGES = [
+    "alpaca",
     "binance",
     "binanceus",
     "binanceusdm",
